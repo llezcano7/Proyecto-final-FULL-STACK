@@ -76,13 +76,15 @@ export class MongooseConnection {
 static async getHistoricPlayersByRegion(region) {
   const normalizedRegion = region.toLowerCase();
 
-  if (normalizedRegion === 'america' || normalizedRegion === 'europa') {
+  if (normalizedRegion === 'america' || normalizedRegion === 'europe') {
     return await HistoricPlayersModel.find({
       region: { $regex: new RegExp(`^${normalizedRegion}$`, 'i') }
     });
   } else {
     return await HistoricPlayersModel.find({
-      region: { $nin: ['america', 'europa'] }
+      region: {
+        $not: { $regex: new RegExp(`^(america|europe)$`, 'i') }
+      }
     });
   }
 }

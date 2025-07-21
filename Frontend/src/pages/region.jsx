@@ -14,7 +14,6 @@ function Region() {
       try {
         const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/region/${region}`);
         const data = await res.json();
-        console.log("DATA RECIBIDA DEL BACKEND:", data); // 👈 Asegurate de ver qué llega
 
 
         if (res.ok) {
