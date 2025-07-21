@@ -5,7 +5,7 @@ function Navbar() {
   const { user, logout } = useAuth();
 
   return (
-    <nav>
+    <nav className='navbar'>
       <Link to="/">Inicio</Link>
       <Link to="/region/america">Históricos de América</Link>
       <Link to="/region/europe">Históricos de Europa</Link>

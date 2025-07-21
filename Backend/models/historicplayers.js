@@ -73,19 +73,17 @@ export class MongooseConnection {
   }
 
   /////////////////// FILTER BY REGION ///////////////////
+static async getHistoricPlayersByRegion(region) {
+  const normalizedRegion = region.toLowerCase();
 
-  static async getHistoricPlayersByRegion(region) {
-    const normalizedRegion = region.toLowerCase();
-
-    if (normalizedRegion === 'america' || normalizedRegion === 'europa') {
-      return await HistoricPlayersModel.find({
-        region: { $regex: new RegExp(`^${normalizedRegion}$`, 'i') }
-      });
-    } else {
-      return await HistoricPlayersModel.find({
-        region: { $nin: ['america', 'europa'] }
-      });
-    }
+  if (normalizedRegion === 'america' || normalizedRegion === 'europa') {
+    return await HistoricPlayersModel.find({
+      region: { $regex: new RegExp(`^${normalizedRegion}$`, 'i') }
+    });
+  } else {
+    return await HistoricPlayersModel.find({
+      region: { $nin: ['america', 'europa'] }
+    });
   }
-
+}
 };

@@ -1,0 +1,369 @@
+[{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ad7"
+  },
+  "name": "Johan Cruyff",
+  "position": "Forward",
+  "nationality": "Dutch",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ad8"
+  },
+  "name": "Zinedine Zidane",
+  "position": "Midfielder",
+  "nationality": "French",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ad9"
+  },
+  "name": "Franz Beckenbauer",
+  "position": "Defender",
+  "nationality": "German",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ada"
+  },
+  "name": "Lev Yashin",
+  "position": "Goalkeeper",
+  "nationality": "Russian",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0adb"
+  },
+  "name": "Garrincha",
+  "position": "Forward",
+  "nationality": "Brazilian",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0adc"
+  },
+  "name": "Ronaldinho",
+  "position": "Midfielder",
+  "nationality": "Brazilian",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0add"
+  },
+  "name": "Roberto Baggio",
+  "position": "Forward",
+  "nationality": "Italian",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ade"
+  },
+  "name": "Paolo Maldini",
+  "position": "Defender",
+  "nationality": "Italian",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0adf"
+  },
+  "name": "Lothar Matthäus",
+  "position": "Midfielder",
+  "nationality": "German",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae0"
+  },
+  "name": "Michel Platini",
+  "position": "Midfielder",
+  "nationality": "French",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae1"
+  },
+  "name": "Ferenc Puskás",
+  "position": "Forward",
+  "nationality": "Hungarian",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae2"
+  },
+  "name": "Alfredo Di Stéfano",
+  "position": "Forward",
+  "nationality": "Argentinian/Spanish",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae3"
+  },
+  "name": "George Weah",
+  "position": "Forward",
+  "nationality": "Liberian",
+  "region": "Rest of the world\n"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae4"
+  },
+  "name": "Didier Drogba",
+  "position": "Forward",
+  "nationality": "Ivorian",
+  "region": "Rest of the world"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae5"
+  },
+  "name": "Roger Milla",
+  "position": "Forward",
+  "nationality": "Cameroonian",
+  "region": "Rest of the world"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae6"
+  },
+  "name": "Hidetoshi Nakata",
+  "position": "Midfielder",
+  "nationality": "Japanese",
+  "region": "Rest of the world"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae7"
+  },
+  "name": "Cha Bum-kun",
+  "position": "Forward",
+  "nationality": "South Korean",
+  "region": "Rest of the world"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae8"
+  },
+  "name": "Carlos Valderrama",
+  "position": "Midfielder",
+  "nationality": "Colombian",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0ae9"
+  },
+  "name": "Enzo Francescoli",
+  "position": "Midfielder",
+  "nationality": "Uruguayan",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0aea"
+  },
+  "name": "Hugo Sánchez",
+  "position": "Forward",
+  "nationality": "Mexican",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0aeb"
+  },
+  "name": "Teófilo Cubillas",
+  "position": "Midfielder",
+  "nationality": "Peruvian",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0aec"
+  },
+  "name": "Obdulio Varela",
+  "position": "Midfielder",
+  "nationality": "Uruguayan",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0aed"
+  },
+  "name": "Socrates",
+  "position": "Midfielder",
+  "nationality": "Brazilian",
+  "region": "America"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0aee"
+  },
+  "name": "Marco van Basten",
+  "position": "Forward",
+  "nationality": "Dutch",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0aef"
+  },
+  "name": "Andrés Iniesta",
+  "position": "Midfielder",
+  "nationality": "Spanish",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6852c99517745c4e21de0af0"
+  },
+  "name": "Xavi Hernández",
+  "position": "Midfielder",
+  "nationality": "Spanish",
+  "region": "Europe"
+},
+{
+  "_id": {
+    "$oid": "6862c321c1485a810da61b14"
+  },
+  "name": "franco mamamana",
+  "position": "forward",
+  "nationality": "argentinian",
+  "region": "america",
+  "createdAt": {
+    "$date": "2025-06-30T17:02:25.938Z"
+  },
+  "updatedAt": {
+    "$date": "2025-06-30T17:02:25.938Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68654bc7d3ae447054931318"
+  },
+  "name": "diego buananotte",
+  "position": "forward",
+  "nationality": "argentinian",
+  "region": "america",
+  "createdAt": {
+    "$date": "2025-07-02T15:09:59.576Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-02T15:09:59.576Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "686fffd220bcb38ce724dddc"
+  },
+  "name": "diego franco",
+  "position": "forward",
+  "nationality": "argentinian",
+  "region": "america",
+  "createdAt": {
+    "$date": "2025-07-10T18:00:50.935Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-10T18:00:50.935Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687000f88fa0b4c0d1f5e1e4"
+  },
+  "name": "lautaro lezcano",
+  "position": "forward",
+  "nationality": "argentinian",
+  "region": "america",
+  "createdAt": {
+    "$date": "2025-07-10T18:05:44.133Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-10T18:05:44.133Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687001088fa0b4c0d1f5e1e7"
+  },
+  "name": "patricio valiente",
+  "position": "forward",
+  "nationality": "argentinian",
+  "region": "america",
+  "createdAt": {
+    "$date": "2025-07-10T18:06:00.362Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-10T18:06:00.362Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68700e87dd825866a5a1b48f"
+  },
+  "name": "patricio valientes",
+  "position": "defender",
+  "nationality": "argentinian",
+  "region": "america",
+  "createdAt": {
+    "$date": "2025-07-10T19:03:35.490Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-10T19:03:35.490Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687d3824050a5a7a69ca9e9f"
+  },
+  "name": "florencia vicente",
+  "position": "defender",
+  "nationality": "argentinian",
+  "region": "america",
+  "createdAt": {
+    "$date": "2025-07-20T18:40:36.122Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-20T18:40:36.122Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687eaf095491cd06a5daf2bf"
+  },
+  "name": "harry",
+  "position": "forward",
+  "nationality": "british",
+  "region": "rest",
+  "createdAt": {
+    "$date": "2025-07-21T21:20:09.149Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T21:20:09.149Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "687ec46d036e6aa01991bb4a"
+  },
+  "name": "municipios",
+  "position": "defender",
+  "nationality": "argentinian",
+  "region": "uk",
+  "createdAt": {
+    "$date": "2025-07-21T22:51:25.297Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-21T22:51:25.297Z"
+  }
+}]
