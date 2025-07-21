@@ -1,16 +1,16 @@
 import jwt from "jsonwebtoken";
 import response from '../utils/response.js';
 import dotenv from 'dotenv';
-dotenv.config()
+dotenv.config();
 
 export default function authenticator(req, res, next) {
-  const token = req.cookies.user_token;
+  const token = req.cookies['user-token'];
 
   if (!token) {
     return res.status(401).json(response({
       success: false,
       status: 401,
-      message: "Unauthorized" 
+      message: "Unauthorized"
     }));
   }
 
@@ -22,13 +22,8 @@ export default function authenticator(req, res, next) {
         message: "Invalid token"
       }));
     }
-    res.status(200).json(response({
-      success: true,
-      status: 200,
-      data: decoded
-    }));
-    req.user = user
-    next()
+
+    req.user = decoded;
+    next();
   });
 }
- 

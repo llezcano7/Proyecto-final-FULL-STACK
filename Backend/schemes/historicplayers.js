@@ -38,6 +38,6 @@ historicPlayersSchema.set("toJSON", {
   },
 );
 
-export const historicPlayersModel = mongoose.model(
+export const HistoricPlayersModel = mongoose.model(
   "historicplayers", historicPlayersSchema
 ); 

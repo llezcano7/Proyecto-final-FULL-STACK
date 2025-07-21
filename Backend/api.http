@@ -28,25 +28,27 @@ Content-Type: application/json
   "name": "JAVIER"
 }
 #####
-DELETE http://localhost:3002/historicplayers/68704c622e822d153842da01
+DELETE http://localhost:3002/historicplayers/1616161616
 #####
 DELETE http://localhost:3002/historicplayers/likskdjdoinundfiwbibfi
 #####
+
 POST http://localhost:3002/api/register
 Content-Type: application/json
 
 {
-  "username": "lautaro2",
-  "email": "lautaro2@example.com",
+  "username": "lautaro",
+  "email": "lautarolezcano@gmail.com",
   "password": "123456"
 }
+
 
 ######
 POST  http://localhost:3002/api/login
 Content-Type: application/json
 
 {
-  "email": "lautaro@example.com",
+  "email": "lauta@example.com",
   "password": "123456"
 }
 

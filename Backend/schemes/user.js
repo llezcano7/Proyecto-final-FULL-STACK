@@ -31,4 +31,4 @@ export const userSchema = new mongoose.Schema({
   versionKey: false
 });
 
-export const userModel = mongoose.model('users', userSchema);
+export const UserModel = mongoose.model('users', userSchema);

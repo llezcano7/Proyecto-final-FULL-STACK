@@ -1,22 +1,30 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import register from './components/register';
-import login from './components/login'
+import { Routes, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import Navbar from './components/navbar';
+import { useAuth } from './context/authcontext'
+import Home from './pages/home';
+import Login from './pages/login';
+import Register from './pages/register';
+import Region from './pages/region';
+import CreatePlayer from './pages/createplayer';
+import PrivateRoute from './components/PrivateRoute';
 
 
 
 function App() {
-  return (
- <BrowserRouter>
-  <Routes>
-   <Route path='/' element={<h1>Historic Player API</h1>} />
-   <Route path='/login' element={<loginPage/>} />
-   <Route path='/register' element={<registerPage/>} />
-   <Route path='/historic-players' element={<h1>Historic Players</h1>} />
-   <Route path='/add-player' element={<h1>Add-player</h1>} />
-   <Route path='/profile' element={<h1>Profile</h1>} />
-  </Routes>
- </BrowserRouter>
-  )
 
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register/>} />
+        <Route path="/region/:region" element={<Region />} />
+         <Route path="/create" element={ <PrivateRoute> <CreatePlayer /> </PrivateRoute> }/>
+      </Routes>
+    </>
+  );
 }
-export default App
+
+export default App;

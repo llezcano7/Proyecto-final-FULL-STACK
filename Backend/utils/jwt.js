@@ -7,7 +7,7 @@ export default function tokenAndCookie(res, user, secret = process.env.JWT_SECRE
   const token = jwt.sign(
     {
       id: user.id,
-      name: user.name,
+      name: user.username,
       email: user.email,
       type: user.type
     },
@@ -16,9 +16,9 @@ export default function tokenAndCookie(res, user, secret = process.env.JWT_SECRE
   );
 
   res.cookie('user-token', token, {
-     httpOnly: true,
-     secure: false,
-     maxAge: 2 * 60 * 60 * 1000 // 2 hours
-   });
-   return { token, user };
-  }
+    httpOnly: true,
+    secure: false,
+    maxAge: 2 * 60 * 60 * 1000 // 2 hours
+  });
+  return { token, user };
+}
