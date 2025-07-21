@@ -74,11 +74,13 @@ export function AuthProvider({ children }) {
             console.error("Logout error:", error);
         }
     };
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const checkUser = async () => {
             try {
                 const res = await fetch("http://localhost:3002/api/profile", {
+                    method: "GET",
                     credentials: "include"
                 });
 
@@ -91,6 +93,8 @@ export function AuthProvider({ children }) {
                 }
             } catch (err) {
                 setUser(null);
+            } finally {
+                setLoading(false); 
             }
         };
 
@@ -98,7 +102,7 @@ export function AuthProvider({ children }) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ user, login, register, logout }}>
+        <AuthContext.Provider value={{ user, login, register, logout, loading }}>
             {children}
         </AuthContext.Provider>
     );

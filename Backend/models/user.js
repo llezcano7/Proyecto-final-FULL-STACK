@@ -17,6 +17,8 @@ mongoose.connect(connectionMongoDB)
 
 export default class UserLog {
 
+    /////////////////// GET ALL USERS ///////////////////
+
   static async getAllUsers() {
     const response = await UserModel.find({});
 
@@ -48,12 +50,17 @@ export default class UserLog {
     if (!user) {
       throw new Error("User not found");
     }
-
     const isMatch = await bcrypt.compare(password, user.password);
-
     if (!isMatch) {
       throw new Error("Invalid password");
     }
     return user
+  }
+
+  /////////////////// FIND USER BY ID ///////////////////
+
+  static async findUserById(id) {
+    const user = await UserModel.findById(id);
+    return user;
   }
 }

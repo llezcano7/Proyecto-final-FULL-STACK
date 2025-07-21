@@ -78,3 +78,11 @@ historicPlayersRouter.delete('/:id', async (req, res, next) => {
     res.json(deletedHistoricPlayerById);
   } else { next() }
 });
+
+/////////////////// FILTER BY REGION ///////////////////
+
+historicPlayersRouter.get('/region/:region', async (req, res) => {
+  const { region } = req.params;
+  const responseObj = await HistoricPlayersController.getHistoricPlayersByRegion(region);
+  res.status(responseObj.status).json(responseObj);
+});

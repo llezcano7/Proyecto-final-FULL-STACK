@@ -180,6 +180,7 @@ export default class HistoricPlayersController {
   static async getHistoricPlayersByRegion(region) {
     try {
       const players = await MongooseConnection.getHistoricPlayersByRegion(region);
+
       return response({
         success: true,
         status: 200,
@@ -195,4 +196,5 @@ export default class HistoricPlayersController {
       });
     }
   }
+
 }

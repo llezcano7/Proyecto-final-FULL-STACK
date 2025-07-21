@@ -75,8 +75,17 @@ export class MongooseConnection {
   /////////////////// FILTER BY REGION ///////////////////
 
   static async getHistoricPlayersByRegion(region) {
-    return await HistoricPlayersModel.find({
-      region: { $regex: new RegExp(`^${region}$`, 'i') }
-    });
+    const normalizedRegion = region.toLowerCase();
+
+    if (normalizedRegion === 'america' || normalizedRegion === 'europa') {
+      return await HistoricPlayersModel.find({
+        region: { $regex: new RegExp(`^${normalizedRegion}$`, 'i') }
+      });
+    } else {
+      return await HistoricPlayersModel.find({
+        region: { $nin: ['america', 'europa'] }
+      });
+    }
   }
+
 };

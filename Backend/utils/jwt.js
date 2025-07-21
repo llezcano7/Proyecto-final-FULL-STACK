@@ -18,7 +18,8 @@ export default function tokenAndCookie(res, user, secret = process.env.JWT_SECRE
   res.cookie('user-token', token, {
     httpOnly: true,
     secure: false,
-    maxAge: 2 * 60 * 60 * 1000 // 2 hours
+    sameSite: 'lax',
+    maxAge: 2 * 60 * 60 * 1000
   });
   return { token, user };
 }

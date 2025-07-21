@@ -54,6 +54,7 @@ Content-Type: application/json
 
 ######
 GET http://localhost:3002/api/profile
+Cookie: user-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4N2QzZGNmYzlmYzM4MWQwZGJiNDcwZCIsIm5hbWUiOiJsYXV0YSIsImVtYWlsIjoibGF1dGFAZXhhbXBsZS5jb20iLCJ0eXBlIjoidXNlciIsImlhdCI6MTc1MzEzMzQ4NywiZXhwIjoxNzUzMTQwNjg3fQ.hucijnRjzmfXfZj4f3hDCZMc1NbNi460MnO_tcwKAdE
 
 
 

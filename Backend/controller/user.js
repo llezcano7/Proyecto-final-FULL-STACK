@@ -65,12 +65,12 @@ export class UserController {
 
   static async findUserById(id) {
     try {
-      const user = await UserLog.findByID(id);
+      const user = await UserLog.findUserById(id);
       if (!user) throw new Error("User not found");
       return response({
         success: true,
         status: 200,
-        message: "User found",
+        message: "User founded",
         data: user
       });
     } catch (error) {
