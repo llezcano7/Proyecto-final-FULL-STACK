@@ -1,17 +1,12 @@
-// src/context/AuthContext.jsx
 import { createContext, useContext, useEffect, useState } from 'react';
 
-// 1. Crear el contexto
 const AuthContext = createContext();
 
-// 2. Hook para usar el contexto
 export const useAuth = () => useContext(AuthContext);
 
-// 3. Proveedor del contexto
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
 
-    // Función de login
     const login = async (email, password) => {
         try {
             const response = await fetch("http://localhost:3002/api/login", {
