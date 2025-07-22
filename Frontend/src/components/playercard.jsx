@@ -1,4 +1,3 @@
-import './playercard.css';
 
 function PlayerCard({ player }) {
   return (

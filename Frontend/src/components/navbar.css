@@ -1,13 +1,10 @@
 .navbar {
   display: flex;
-  color: var(--secondary-color);
+  color: black;
   flex-direction: space-between;
   align-items: center;
-  padding-inline: var(--distance-1);
-  gap: var(--distance-2);
+  padding-inline: 2 rem;
+  gap: 2rem;
   cursor: pointer;
 }
 
-.navbar a:hover {
-  color: var(--primary-color);
-}
