@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
 
     const login = async (email, password) => {
         try {
-            const response = await fetch("http://localhost:3002/api/login", {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/login`, {
                 method: "POST",
                 credentials: 'include',
                 headers: {
@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
 
     const register = async (username, email, password) => {
         try {
-            const response = await fetch("http://localhost:3002/api/register", {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/register`, {
                 method: "POST",
                 credentials: 'include',
                 headers: {
@@ -59,7 +59,7 @@ export function AuthProvider({ children }) {
 
     const logout = async () => {
         try {
-            await fetch("http://localhost:3002/api/logout", {
+            await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/logout`, {
                 method: "POST",
                 credentials: "include",
             });
@@ -74,7 +74,7 @@ export function AuthProvider({ children }) {
     useEffect(() => {
         const checkUser = async () => {
             try {
-                const res = await fetch("http://localhost:3002/api/profile", {
+                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/profile`, {
                     method: "GET",
                     credentials: "include"
                 });

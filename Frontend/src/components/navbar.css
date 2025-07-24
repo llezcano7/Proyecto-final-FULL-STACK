@@ -1,10 +1,21 @@
+/*NAVBAR*/
 .navbar {
   display: flex;
-  color: black;
+  color: var(--secondary-color);
   flex-direction: space-between;
   align-items: center;
-  padding-inline: 2 rem;
-  gap: 2rem;
+  padding-inline: var(--distance-1);
+  gap: var(--distance-2);
   cursor: pointer;
+} 
+.navbar a:hover {
+  color: var(--third-color);
+  transition: all ease-in 0.2s;
 }
 
+.auth-links {
+  display: flex;
+  flex-direction: space-between;
+  align-items: center;
+  gap: 2rem;
+}

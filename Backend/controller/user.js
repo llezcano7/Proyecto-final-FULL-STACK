@@ -8,14 +8,14 @@ export class UserController {
       return response({
         success: true,
         status: 200,
-        message: "Users found",
+        message: "Usuario conectado",
         data: users
       });
     } catch (error) {
       return response({
         success: false,
         status: 404,
-        message: "Users not found",
+        message: "Usuario no encontrado",
         error: error.message
       });
     }
@@ -27,18 +27,14 @@ export class UserController {
       return response({
         success: true,
         status: 201,
-        message: "User registered successfully",
+        message: "Usuario registrado exitosamente",
         data: newUser
       });
     } catch (error) {
-      console.error("Register error:", error);
-
-      let message = "Registration failed";
-
       return response({
         success: false,
         status: 400,
-        message: "Registration failed",
+        message: "Registro ERROR",
         error: error.message
       });
     }
@@ -50,7 +46,7 @@ export class UserController {
       return response({
         success: true,
         status: 200,
-        message: "Login successful",
+        message: "Bienvenido/a",
         data: user
       });
     } catch (error) {

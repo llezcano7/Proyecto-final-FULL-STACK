@@ -3,7 +3,7 @@ import { useAuth } from '../context/authcontext';
 import { useNavigate } from 'react-router-dom';
 
 function CreatePlayer() {
-  const { user } = useAuth(); 
+  const { user } = useAuth();
   const [form, setForm] = useState({ name: '', position: '', nationality: '', region: '' });
   const navigate = useNavigate();
 
@@ -29,13 +29,13 @@ function CreatePlayer() {
   };
 
   return user ? (
-    <form onSubmit={handleSubmit}>
-      <h2>Create Player</h2>
-      <input name="name" placeholder="Name" onChange={handleChange} />
-      <input name="position" placeholder="Position" onChange={handleChange} />
-      <input name="nationality" placeholder="Nationality" onChange={handleChange} />
-      <input name="region" placeholder="Region" onChange={handleChange} />
-      <button type="submit">Crear</button>
+    <form className='form' onSubmit={handleSubmit}>
+      <h2 className="form-title">Crear Player</h2>
+      <input className='form-input' name="name" placeholder="Name" onChange={handleChange} />
+      <input className='form-input' name="position" placeholder="Position" onChange={handleChange} />
+      <input className='form-input' name="nationality" placeholder="Nationality" onChange={handleChange} />
+      <input className='form-input' name="region" placeholder="Region" onChange={handleChange} />
+      <button className='form-button' type="submit">Crear</button>
     </form>
   ) : (<p>Debes estar logueado para crear jugadores.</p>)
 }

@@ -1,0 +1,9 @@
+.footer-container {
+background-color: var(--primary-color);  
+}
+
+
+.footer-text {
+  font-size: 14px;
+  color: var(--third-color)
+}
