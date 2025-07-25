@@ -11,6 +11,5 @@ export const transformPlayer = (doc, returnedObject) => {
   nameParts = nameParts.map(part => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase());
   returnedObject.name = nameParts.join(' ');
 
-  delete returnedObject._id;
   delete returnedObject.__v;
 };

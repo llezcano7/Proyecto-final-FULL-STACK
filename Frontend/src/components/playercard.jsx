@@ -1,6 +1,8 @@
-import { FaTrophy } from "react-icons/fa";
-import { FaFutbol } from "react-icons/fa";
+import { FaTrophy, FaFutbol } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import { useState, useEffect } from 'react';
+import { useAuth } from '../context/authcontext';
+import { Link } from 'react-router-dom';
 import './playercard.css';
 
 const formatPosition = (position) => {
@@ -9,48 +11,51 @@ const formatPosition = (position) => {
     : "Posición desconocida";
 };
 
-const positionColors = {
-  arquero: '#1e90ff',      // azul
-  defensor: '#28a745',     // verde
-  mediocampista: '#ffc107',// amarillo
-  delantero: '#dc3545',    // rojo
-};
-
 function PlayerCard({ player }) {
+  const { user } = useAuth();
   const [visible, setVisible] = useState(false);
+  const [deleted, setDeleted] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);
 
-  if (
-    !player ||
-    !player.name ||
-    !player.position ||
-    !player.nationality ||
-    !player.region ||
-    !player.teams ||
-    !player.world_cup ||
-    !player.data
-  ) {
+  if (!player || !player.name || !player.position || !player.nationality || !player.region || !player.teams || !player.world_cup || !player.data || deleted) {
     return null;
   }
 
-  const { name, position, nationality, region, teams, world_cup, data } = player;
-  const borderColor = positionColors[position.toLowerCase()] || '#ccc';
+  const { _id, name, position, nationality, region, teams, world_cup, data } = player;
+
+  const handleDelete = async () => {
+    const confirmDelete = confirm(`¿Estás seguro de eliminar a ${name}?`);
+    if (!confirmDelete) return;
+
+    try {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/name/${name}`, {
+        method: 'DELETE',
+        credentials: 'include',
+      });
+      if (!res.ok) throw new Error('Error al eliminar el jugador');
+      alert('Jugador eliminado correctamente');
+      setDeleted(true);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
 
   return (
-    <div className="player-container grid drid-cols-3">
-      <div className={`player-card ${visible ? 'visible' : ''}`} style={{ borderColor }}>
+    <div className="player-container grid grid-cols-3">
+      <div className={`player-card ${visible ? 'visible' : ''}`}>
         <h3 className="player-name">{name}</h3>
 
         <div className="player-row">
-          <FaFutbol className="icon"/>
+          <FaFutbol className="icon" />
           <span className="position-highlight">{formatPosition(position)}</span>
         </div>
 
         <div className="player-row">
+          <FaLocationDot className="icon" />
           <strong>Nacionalidad:</strong> {nationality.charAt(0).toUpperCase() + nationality.slice(1)}
         </div>
 
@@ -63,7 +68,7 @@ function PlayerCard({ player }) {
         </div>
 
         <div className="player-row">
-          <FaTrophy  className="icon" />
+          <FaTrophy className="icon" />
           <strong>Copas del Mundo:</strong>
           <ul className="worldcup-list">
             {Array.isArray(world_cup) && world_cup.length > 0 ? (
@@ -73,7 +78,15 @@ function PlayerCard({ player }) {
             )}
           </ul>
         </div>
+
         <p className="player-data">{data}</p>
+
+        {user && (
+          <div className="player-actions">
+            <button className="delete-button" onClick={handleDelete}>🗑️ Eliminar</button>
+            <Link className="edit-button" to={`/edit/${_id}`}>✏️ Editar</Link>
+          </div>
+        )}
       </div>
     </div>
   );

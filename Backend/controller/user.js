@@ -20,6 +20,7 @@ export class UserController {
       });
     }
   }
+  /////////////////// POST ///////////////////
 
   static async register({ username, email, password }) {
     try {
@@ -40,6 +41,8 @@ export class UserController {
     }
   }
 
+  /////////////////// POST ///////////////////
+
   static async login({ email, password }) {
     try {
       const user = await UserLog.login(email, password);
@@ -58,6 +61,8 @@ export class UserController {
       });
     }
   }
+
+    /////////////////// GET ///////////////////
 
   static async findUserById(id) {
     try {

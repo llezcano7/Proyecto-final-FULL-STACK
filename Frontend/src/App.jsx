@@ -22,6 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/region/:region" element={<PlayersList />} />
         <Route path="/create" element={<PrivateRoute> <CreatePlayer /> </PrivateRoute>} />
+        <Route path="/edit" element={<PrivateRoute> <CreatePlayer /> </PrivateRoute>} />
       </Routes>
       <Footer />
     </>

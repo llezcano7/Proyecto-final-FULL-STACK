@@ -1,16 +1,30 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authcontext';
+import { BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
+import { useEffect, useState } from 'react';
 import './navbar.css'
 
 function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
 
   const handleLogout = async () => {
     await logout();
     navigate('/login');
   };
 
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
 
   return (
     <header className="container bg-1 display-flex flex-between align-center width-1">
@@ -22,9 +36,18 @@ function Navbar() {
         <Link className='mayus' to="/region/europa">Players de Europa</Link>
         <Link className='mayus' to="/region/rest">Players de Resto del Mundo</Link>
         {user && (
-          <Link className="mayus" to="/create">Crear Player</Link>
+          <>
+          <Link className="btn" to="/create">Crear Player</Link>
+          </>
         )}
       </nav>
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="theme-toggle"
+        aria-label="Cambiar tema"
+      >
+        {darkMode ? <BsSunFill size={22} /> : <BsMoonStarsFill size={22} />}
+      </button>
       {user ? (
         <>
           <span className="mayus">Hola, {user.username}!</span>
