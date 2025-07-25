@@ -788,10 +788,94 @@ body {
     text-align: center;
 }
 
+
+ /*-------------------------------------- DARK MODE ---------------------------------------------*/
+
+
+body.dark {
+    background-color:#4f4f4f;
+}
 body.dark header.container {
   background-color: var(--secondary-color);
+  color: var(--third-color);
 }
 body.dark .btn {
-  background-color: #333;
-  color: #eaeaea;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+}
+body.dark .navbar a {
+  color: var(--third-color); 
+} 
+ body.dark .form {
+    background-color: var(--secondary-color);
+    border: 3px solid white
+ }
+  body.dark .form-title {
+    color: var(--third-color);
+ }
+
+ body.dark .h3{
+    color: var(--third-color)
+ }
+ body.dark .player-card {
+    background-color: var(--secondary-color);
+ }
+ body.dark .player-name {
+    color: var(--third-color);
+ }
+ body.dark .row-line {
+    color: var(--third-color);
+ }
+ body.dark .position {
+    color: var(--third-color);
+ }
+ body.dark .player-row {
+    color: var(--third-color);
+ }
+ body.dark .worldcup-list {
+  color: var(--third-color);
+}
+  body.dark .player-data {
+    color: var(--third-color);
+ }
+
+
+ /*-------------------------------------- MEDIA QUERYS---------------------------------------------*/
+
+
+ .menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: 1000;
+  }
+
+  .navbar.open {
+    display: flex;
+  }
+
+  .auth-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

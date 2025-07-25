@@ -1,12 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authcontext';
 import { BsMoonStarsFill, BsSunFill } from 'react-icons/bs';
+import { GiHamburgerMenu } from "react-icons/gi";
 import { useEffect, useState } from 'react';
 import './navbar.css'
 
 function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
   });
@@ -31,13 +33,16 @@ function Navbar() {
       <Link className='logo' to="/">
         <img src="/logoapi-1.png" alt="Logo principal de Players API" />
       </Link>
-      <nav className="navbar display-flex flex-between align-center pointer pd-inline-1 gap-2">
+      <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menú">
+        <GiHamburgerMenu size={24} />
+      </button>
+      <nav className={`navbar ${menuOpen ? 'open' : ''} display-flex flex-between align-center pointer pd-inline-1 gap-2`}>
         <Link className='mayus' to="/region/america">Players de América</Link>
         <Link className='mayus' to="/region/europa">Players de Europa</Link>
         <Link className='mayus' to="/region/rest">Players de Resto del Mundo</Link>
         {user && (
           <>
-          <Link className="btn" to="/create">Crear Player</Link>
+            <Link className="btn" to="/create">Crear Player</Link>
           </>
         )}
       </nav>

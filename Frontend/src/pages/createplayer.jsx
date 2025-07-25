@@ -29,7 +29,8 @@ function CreatePlayer() {
   };
 
   return user ? (
-    <form className='form' onSubmit={handleSubmit}>
+    <div className='display-flex flex-between align-center flex-center container width-1'>
+    <form className='form width-2 pd-right-4' onSubmit={handleSubmit}>
       <h2 className="form-title">Crear Player</h2>
       <input className='form-input' name="name" placeholder="Name" onChange={handleChange} />
       <input className='form-input' name="position" placeholder="Position" onChange={handleChange} />
@@ -41,6 +42,10 @@ function CreatePlayer() {
 
       <button className='form-button' type="submit">Crear</button>
     </form>
+    <div>
+        <h3 className='h3 mayus width-2 pd-left-6'>Formá parte de la historia grande del fútbol, creando el futbolista que consideres que debe estar en Players API</h3>
+      </div>
+    </div>
   ) : (<p>Debes estar logueado para crear jugadores.</p>)
 }
 

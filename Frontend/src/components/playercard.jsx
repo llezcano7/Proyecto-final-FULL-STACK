@@ -51,20 +51,20 @@ function PlayerCard({ player }) {
 
         <div className="player-row">
           <FaFutbol className="icon" />
-          <span className="position-highlight">{formatPosition(position)}</span>
+          <span className="position">{formatPosition(position)}</span>
         </div>
 
         <div className="player-row">
           <FaLocationDot className="icon" />
-          <strong>Nacionalidad:</strong> {nationality.charAt(0).toUpperCase() + nationality.slice(1)}
+          <strong className="row-line">Nacionalidad:</strong> {nationality.charAt(0).toUpperCase() + nationality.slice(1)}
         </div>
 
         <div className="player-row">
-          <strong>Región:</strong> {region.charAt(0).toUpperCase() + region.slice(1)}
+          <strong className="row-line">Región:</strong> {region.charAt(0).toUpperCase() + region.slice(1)}
         </div>
 
         <div className="player-row">
-          <strong>Equipos:</strong> {Array.isArray(teams) ? teams.join(', ') : teams}
+          <strong className="row-line">Equipos:</strong> {Array.isArray(teams) ? teams.join(', ') : teams}
         </div>
 
         <div className="player-row">
@@ -83,8 +83,8 @@ function PlayerCard({ player }) {
 
         {user && (
           <div className="player-actions">
-            <button className="delete-button" onClick={handleDelete}>🗑️ Eliminar</button>
-            <Link className="edit-button" to={`/edit/${_id}`}>✏️ Editar</Link>
+            <button className="delete-button" onClick={handleDelete}>Eliminar</button>
+            <Link className="edit-button" to={`/edit/${_id}`}> Editar</Link>
           </div>
         )}
       </div>

@@ -8,6 +8,7 @@ import PrivateRoute from './components/privateRoute';
 import Footer from "./components/footer";
 import PlayersList from './components/playerslist';
 import './library.css'
+import EditPlayer from './pages/editplayer';
 
 
 
@@ -22,7 +23,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/region/:region" element={<PlayersList />} />
         <Route path="/create" element={<PrivateRoute> <CreatePlayer /> </PrivateRoute>} />
-        <Route path="/edit" element={<PrivateRoute> <CreatePlayer /> </PrivateRoute>} />
+        <Route path="/edit/:id" element={<PrivateRoute> <EditPlayer /> </PrivateRoute>} />
       </Routes>
       <Footer />
     </>

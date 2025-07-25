@@ -20,7 +20,7 @@
 
 .player-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .player-name {
@@ -61,20 +61,22 @@
   color: #666;
   font-style: italic;
 }
+
 .player-actions {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  gap: var(--distance-1);
   margin-top: 1rem;
 }
 
 .delete-button {
-  background-color: #ff4d4d;
-  color: white;
+  background-color: #c22a2a;
+  color: var(--third-color);
+  font-size: var(--size-1);
   border: none;
   padding: 0.4rem 1rem;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
   transition: background-color 0.2s ease;
 }
 
@@ -82,3 +84,17 @@
   background-color: #cc0000;
 }
 
+.edit-button {
+  background-color: #246ae4;
+  color: var(--third-color);
+  font-size: var(--size-1);
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.edit-button:hover {
+  background-color: #003dcc;
+}

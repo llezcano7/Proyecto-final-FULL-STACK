@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/authcontext';
-import PlayerCard from '../components/playercard'; 
+import PlayerCard from '../components/playercard';
 import { useNavigate } from 'react-router-dom';
 
 function MisJugadores() {

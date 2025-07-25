@@ -36,29 +36,29 @@ function Login() {
         </h3>
       </div>
       <div className='form-container'>
-    <form className="form" onSubmit={handleSubmit}>
-      <h2 className="form-title">Iniciar sesión</h2>
+        <form className="form" onSubmit={handleSubmit}>
+          <h2 className="form-title">Iniciar sesión</h2>
 
-      {errorMessage && <p className="form-error">{errorMessage}</p>}
-      {successMessage && <p className="form-success">{successMessage}</p>}
+          {errorMessage && <p className="form-error">{errorMessage}</p>}
+          {successMessage && <p className="form-success">{successMessage}</p>}
 
-      <input
-        className="form-input"
-        name="email"
-        type="email"
-        placeholder="Email"
-        onChange={handleChange}
-      />
-      <input
-        className="form-input"
-        name="password"
-        type="password"
-        placeholder="Contraseña"
-        onChange={handleChange}
-      />
-      <button className="form-button" type="submit">Iniciar sesión</button>
-    </form>
-    </div>
+          <input
+            className="form-input"
+            name="email"
+            type="email"
+            placeholder="Email"
+            onChange={handleChange}
+          />
+          <input
+            className="form-input"
+            name="password"
+            type="password"
+            placeholder="Contraseña"
+            onChange={handleChange}
+          />
+          <button className="form-button" type="submit">Iniciar sesión</button>
+        </form>
+      </div>
     </div>
   );
 }
