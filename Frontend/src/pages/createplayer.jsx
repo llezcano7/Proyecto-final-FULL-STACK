@@ -35,6 +35,10 @@ function CreatePlayer() {
       <input className='form-input' name="position" placeholder="Position" onChange={handleChange} />
       <input className='form-input' name="nationality" placeholder="Nationality" onChange={handleChange} />
       <input className='form-input' name="region" placeholder="Region" onChange={handleChange} />
+      <input className='form-input' name="region" placeholder="Teams" onChange={handleChange} />
+      <input className='form-input' name="region" placeholder="World Cup" onChange={handleChange} />
+      <input className='form-input' name="region" placeholder="Data" onChange={handleChange} />
+
       <button className='form-button' type="submit">Crear</button>
     </form>
   ) : (<p>Debes estar logueado para crear jugadores.</p>)

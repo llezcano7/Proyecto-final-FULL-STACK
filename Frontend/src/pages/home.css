@@ -11,35 +11,31 @@
     background-color: var(--secondary-color);
 }
 
-.separator,
-h2 {
+.separator h2 {
     color: var(--third-color);
     font-size: var(--size-6);
     font-weight: lighter;
 }
 
-.separator,
-span {
+.separator span {
     color: var(--third-color);
     font-size: var(--size-6);
 }
 
 .info-text {
     width: 50%;
-    font-size: var(--size-6);
+    font-size: var(--size-4);
     font-weight: bold;
     line-height: 1.2;
 }
 
-.info-list,
-li {
+.info-list li {
     color: var(--primary-color);
-    font-size: var(--size-6);
+    font-size: var(--size-4);
     font-weight: bold;
 }
 
 .info-list,
-p{
+p {
     font-size: var(--size-2);
 }
-

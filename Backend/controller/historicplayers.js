@@ -179,13 +179,13 @@ export default class HistoricPlayersController {
 
   static async getHistoricPlayersByRegion(region) {
     try {
-      const players = await MongooseConnection.getHistoricPlayersByRegion(region);
+      const result = await MongooseConnection.getHistoricPlayersByRegion(region);
 
       return response({
         success: true,
         status: 200,
         message: 'Historic players found by region',
-        data: players
+        data: result
       });
     } catch (error) {
       return response({
@@ -196,5 +196,4 @@ export default class HistoricPlayersController {
       });
     }
   }
-
 }

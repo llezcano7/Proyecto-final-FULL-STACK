@@ -25,9 +25,14 @@ export function AuthProvider({ children }) {
             } else {
                 throw new Error(data.message || "Login failed");
             }
+            if (!data.data) {
+                throw new Error("No se recibió usuario del backend");
+            }
 
+            setUser(data.data);
         } catch (error) {
             console.error("Login error:", error);
+            throw error; // ESTA LÍNEA ES CLAVE
         }
     };
 
@@ -89,7 +94,7 @@ export function AuthProvider({ children }) {
             } catch (err) {
                 setUser(null);
             } finally {
-                setLoading(false); 
+                setLoading(false);
             }
         };
 

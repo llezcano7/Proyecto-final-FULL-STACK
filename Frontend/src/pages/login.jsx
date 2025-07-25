@@ -22,7 +22,7 @@ function Login() {
 
     try {
       await login(email, password);
-      navigate('/create'); // redirige inmediatamente
+      navigate('/create');
     } catch (err) {
       setErrorMessage(err.message || "Usuario no registrado");
     }
@@ -31,7 +31,7 @@ function Login() {
   return (
     <div className='container display-flex flex-between align-center flex-center gap-3 width-1'>
       <div className='login-text'>
-        <h3 className='mayus'>
+        <h3 className='mayus h3 width-2'>
           Bienvenido a Players API, la aplicación que te convertirá en un experto del fútbol. Aquí podrás acceder a datos de los mejores jugadores de la historia del deporte más popular del mundo
         </h3>
       </div>

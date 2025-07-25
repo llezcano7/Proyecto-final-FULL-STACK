@@ -9,15 +9,15 @@ export const historicPlayersSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
   },
-    position: {
-        type: String,
-        required: true,
-        lowercase: true,
-        trim: true,
-        enum: ['goalkeeper', 'defender', 'midfielder', 'forward'],
+  position: {
+    type: String,
+    required: true,
+    lowercase: true,
+    trim: true,
+    enum: ['arquero', 'defensor', 'mediocampista', 'delantero'],
 
-      },
-        nationality: {
+  },
+  nationality: {
     type: String,
     required: true,
     lowercase: true,
@@ -29,15 +29,15 @@ export const historicPlayersSchema = new mongoose.Schema({
     lowercase: true,
     trim: true,
   },
-  teams:{
-    type: String,
+  teams: {
+    type: [String],
     required: true,
     lowercase: true,
     trim: true,
   },
-  world_cup:{
-    type: String,
-    required: false,
+  world_cup: {
+    type: [String],
+    required: true,
     lowercase: true,
     trim: true,
   },
@@ -50,10 +50,10 @@ export const historicPlayersSchema = new mongoose.Schema({
 }, {
   timestamps: true,
   versionKey: false,
-  });
+});
 historicPlayersSchema.set("toJSON", {
   transform: transformPlayer,
-  },
+},
 );
 
 export const HistoricPlayersModel = mongoose.model(

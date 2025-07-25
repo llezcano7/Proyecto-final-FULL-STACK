@@ -28,7 +28,10 @@ export class MongooseConnection {
   }
 
   static async getHistoricPlayersByName(name) {
-    const getHistoricPlayersByName = await HistoricPlayersModel.findOne({ name: { $regex: new RegExp(`^${name.trim()}$`, 'i') } });
+    const getHistoricPlayersByName = await HistoricPlayersModel.find({
+      name: { $regex: new RegExp(name.trim(), 'i') },
+      position: { $exists: true, $ne: null }
+    });
     return getHistoricPlayersByName;
   }
 
@@ -73,19 +76,19 @@ export class MongooseConnection {
   }
 
   /////////////////// FILTER BY REGION ///////////////////
-static async getHistoricPlayersByRegion(region) {
-  const normalizedRegion = region.toLowerCase();
+  static async getHistoricPlayersByRegion(region) {
+    const normalizedRegion = region.toLowerCase();
 
-  if (normalizedRegion === 'america' || normalizedRegion === 'europe') {
-    return await HistoricPlayersModel.find({
-      region: { $regex: new RegExp(`^${normalizedRegion}$`, 'i') }
-    });
-  } else {
-    return await HistoricPlayersModel.find({
-      region: {
-        $not: { $regex: new RegExp(`^(america|europe)$`, 'i') }
-      }
-    });
+    if (normalizedRegion === 'america' || normalizedRegion === 'europa') {
+      return await HistoricPlayersModel.find({
+        region: { $regex: new RegExp(`^${normalizedRegion}$`, 'i') }
+      });
+    } else {
+      return await HistoricPlayersModel.find({
+        region: {
+          $not: { $regex: new RegExp(`^(america|europa)$`, 'i') }
+        }
+      });
+    }
   }
-}
 };

@@ -1,5 +1,5 @@
 export const transformPlayer = (doc, returnedObject) => {
-  const fieldsToCapitalize = ['position', 'nationality', 'region'];
+  const fieldsToCapitalize = ['position', 'nationality', 'region', 'teams', 'world-cup', 'data'];
 
   fieldsToCapitalize.forEach(field => {
     if (returnedObject[field] && typeof returnedObject[field] === 'string') {

@@ -63,6 +63,10 @@ input {
     font-size: var(--size-6);
 }
 
+.h3 {
+    font-size: var(--size-3);
+}
+
 body {
     min-height: 100vh;
     overflow-x: hidden;
@@ -509,6 +513,10 @@ body {
     justify-self: center;
 }
 
+.items-center {
+    justify-items: center;
+}
+
 .align-center {
     align-items: center;
 }
@@ -662,6 +670,7 @@ body {
 }
 
 /*BACKGROUND*/
+
 .bg-1 {
     background-color: var(--primary-color);
 }
@@ -674,23 +683,15 @@ body {
     background-color: var(--third-color);
 }
 
-/*BORDER*/
-.border-bottom {
-    border-bottom: solid 2px var(--primary-color);
+.pointer {
+    cursor: pointer;
 }
-
-.border-1 {
-    border: solid 1px var(--secondary-color);
-}
-
-.radius-1 {
-    border-radius: solid var(--radius-3);
-}
-
 
 /*-------------------------------------- STYLE COMPONENTS ---------------------------------------------*/
 
+
 /*BUTTONS*/
+
 .btn {
     padding: 8px 8px;
     width: fit-content;
@@ -713,74 +714,76 @@ body {
 
 /*FORMS*/
 
-.form-container{
+.form-container {
     width: var(--percentage-1);
 }
+
 .form {
-  max-width: 600px;
-  margin: 5rem auto;
-  padding: 2rem;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: var(--distance-1);
-  align-items: center;
+    max-width: 600px;
+    margin: var(--distance-5) auto;
+    padding: var(--distance-3);
+    background-color: var(--third-color);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--distance-1);
+    align-items: center;
 }
 
 .form-title {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  color: #333;
+    margin-bottom: var(--distance-1);
+    font-size: var(--distance-3);
+    color: var(--secondary-color);
 }
 
 .form-input {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: var(--distance-1);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
-  outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+    outline: none;
 }
 
 .form-button {
-  width: 100%;
-  padding: 0.9rem;
-  background-color: var(--primary-color);
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    font-size: var(--size-1);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .login-button:hover {
-  background-color: #005fa3;
+    background-color: #005fa3;
 }
+
 .form-error {
-  color: #d00000;
-  background-color: #ffe5e5;
-  padding: 0.6rem;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
-  width: 100%;
-  text-align: center;
+    color: #d00000;
+    background-color: #ffe5e5;
+    padding: 0.6rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    text-align: center;
 }
 
 .form-success {
-  color: var(--primary-color);
-  background-color: #e6ffea;
-  padding: 0.6rem;
-  border-radius: 8px;
-  margin-bottom: 0.8rem;
-  width: 100%;
-  text-align: center;
+    color: var(--primary-color);
+    background-color: #e6ffea;
+    padding: 0.6rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    text-align: center;
 }

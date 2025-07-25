@@ -7,7 +7,7 @@
     top: 50%;
     left: 14px;
     transform: translateY(-50%);
-    font-size: 1.2rem;
+    font-size: var(--size-1);
     color: #888;
     pointer-events: none;
 }
@@ -34,7 +34,7 @@
 
 .search-button {
     padding: 0.6rem 1.2rem;
-    margin: 1rem;
+    margin: var(--distance-1);
     border: none;
     background-color: var(--primary-color);
     color: var(--third-color);
