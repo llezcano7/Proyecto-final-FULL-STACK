@@ -808,7 +808,7 @@ body.dark .navbar a {
 } 
  body.dark .form {
     background-color: var(--secondary-color);
-    border: 3px solid white
+    border: 2px solid white
  }
   body.dark .form-title {
     color: var(--third-color);
