@@ -32,14 +32,10 @@ export const historicPlayersSchema = new mongoose.Schema({
   teams: {
     type: [String],
     required: true,
-    lowercase: true,
-    trim: true,
   },
   world_cup: {
     type: [String],
-    required: true,
-    lowercase: true,
-    trim: true,
+    required: false,
   },
   data: {
     type: String,

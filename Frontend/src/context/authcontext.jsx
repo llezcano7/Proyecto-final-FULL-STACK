@@ -20,21 +20,20 @@ export function AuthProvider({ children }) {
 
             const data = await response.json();
 
-            if (response.ok) {
-                setUser(data.data);
-            } else {
+            if (!response.ok || !data.data) {
                 throw new Error(data.message || "Login failed");
             }
-            if (!data.data) {
-                throw new Error("No se recibió usuario del backend");
-            }
 
-            setUser(data.data);
+            const { _id, email: userEmail, role } = data.data;
+
+            setUser({ _id, email: userEmail, role });
+
         } catch (error) {
             console.error("Login error:", error);
-            throw error; // ESTA LÍNEA ES CLAVE
+            throw error;
         }
     };
+
 
     const register = async (username, email, password) => {
         try {
@@ -51,7 +50,9 @@ export function AuthProvider({ children }) {
             console.log("Backend response (register):", data);
 
             if (response.ok) {
-                setUser(data.data);
+                const { _id, email: userEmail, role } = data.data;
+
+                setUser({ _id, email: userEmail, role });
             } else {
                 throw new Error(data.message || "Register failed");
             }
@@ -87,7 +88,8 @@ export function AuthProvider({ children }) {
                 const data = await res.json();
 
                 if (res.ok) {
-                    setUser(data.data);
+                    const { _id, email: userEmail, role } = data.data;
+                    setUser({ _id, email: userEmail, role });
                 } else {
                     setUser(null);
                 }

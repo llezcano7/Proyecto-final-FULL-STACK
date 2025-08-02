@@ -1,6 +1,7 @@
 import { Router } from "express";
 import mongoose from "mongoose";
 import HistoricPlayersController from "../controller/historicplayers.js";
+import Authenticator from '../utils/authenticator.js';
 
 
 export const historicPlayersRouter = Router();
@@ -15,24 +16,24 @@ historicPlayersRouter.get('/', async (req, res) => {
 
 historicPlayersRouter.get('/region/:region', async (req, res) => {
   const { region } = req.params;
-  const playersByRegion = await HistoricPlayersController.getHistoricPlayersByRegion(region);
-  res.json(playersByRegion);
+  const result = await HistoricPlayersController.getHistoricPlayersByRegion(region);
+ res.status(result.status).json(result);
 });
 
 /////////////////// GET BY NAME ///////////////////
 
 historicPlayersRouter.get('/name/:name', async (req, res) => {
   const { name } = req.params;
-  const player = await HistoricPlayersController.getHistoricPlayersByName(name);
-  res.json(player);
+  const result = await HistoricPlayersController.getHistoricPlayersByName(name);
+ res.status(result.status).json(result);
 });
 
 /////////////////// DELETE BY NAME ///////////////////
 
 historicPlayersRouter.delete('/name/:name', async (req, res) => {
   const { name } = req.params;
-  const deletedHistoricPlayerByName = await HistoricPlayersController.deleteHistoricPlayerByName(name);
-  res.json(deletedHistoricPlayerByName);
+  const result = await HistoricPlayersController.deleteHistoricPlayerByName(name);
+ res.status(result.status).json(result);
 });
 
 /////////////////// GET BY ID ///////////////////
@@ -40,8 +41,8 @@ historicPlayersRouter.delete('/name/:name', async (req, res) => {
 historicPlayersRouter.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   if (mongoose.Types.ObjectId.isValid(id)) {
-    const player = await HistoricPlayersController.getHistoricPlayersById(id);
-    res.json(player);
+    const result = await HistoricPlayersController.getHistoricPlayersById(id);
+    res.status(result.status).json(result);
   } else { next() }
 });
 
@@ -49,33 +50,35 @@ historicPlayersRouter.get('/:id', async (req, res, next) => {
 //////////////////// POST ////////////////////
 
 historicPlayersRouter.post('/', async (req, res) => {
-  const created = await HistoricPlayersController.createHistoricPlayer(req.body);
-  res.json(created);
+  const result = await HistoricPlayersController.createHistoricPlayer(req.body);
+  res.status(result.status).json(result);
+  console.log(req.body)
+
 });
 
 //////////////////// PUT ////////////////////
 
 historicPlayersRouter.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const replacedHistoricPLayer = await HistoricPlayersController.replaceHistoricPlayer(id, req.body);
-  res.json(replacedHistoricPLayer);
+  const result = await HistoricPlayersController.replaceHistoricPlayer(id, req.body);
+  res.status(result.status).json(result);
 });
 
 /////////////////// PATCH ///////////////////
 
 historicPlayersRouter.patch('/:id', async (req, res) => {
   const { id } = req.params;
-  const updatedHistoricPLayer = await HistoricPlayersController.updateHistoricPlayer(id, req.body);
-  res.json(updatedHistoricPLayer);
+  const result = await HistoricPlayersController.updateHistoricPlayer(id, req.body);
+  res.status(result.status).json(result);
 });
 
 /////////////////// DELETE BY ID ///////////////////
 
-historicPlayersRouter.delete('/:id', async (req, res, next) => {
+historicPlayersRouter.delete('/:id', Authenticator, async (req, res, next) => {
   const { id } = req.params;
   if (mongoose.Types.ObjectId.isValid(id)) {
-    const deletedHistoricPlayerById = await HistoricPlayersController.deleteHistoricPlayerById(id);
-    res.json(deletedHistoricPlayerById);
+    const result = await HistoricPlayersController.deleteHistoricPlayerById(id);
+    res.status(result.status).json(result);
   } else { next() }
 });
 

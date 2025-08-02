@@ -8,19 +8,24 @@ function EditPlayer() {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const [form, setForm] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [form, setForm] = useState({
+        name: '',
+        position: '',
+        nationality: '',
+        region: '',
+        teams: '',
+        world_cup: '',
+        data: ''
+    });
 
     useEffect(() => {
         const fetchPlayer = async () => {
             try {
                 const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/${id}`);
                 const data = await res.json();
-                setForm(data);
+                setForm(data.data);
             } catch (err) {
                 alert('Error al cargar jugador');
-            } finally {
-                setLoading(false);
             }
         };
         fetchPlayer();
@@ -33,6 +38,7 @@ function EditPlayer() {
     const handleUpdate = async (e) => {
         e.preventDefault();
         try {
+            console.log(id)
             const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/${id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
@@ -46,10 +52,6 @@ function EditPlayer() {
             alert(err.message);
         }
     };
-
-    if (!user) return <p>Debes estar logueado para editar jugadores.</p>;
-    if (loading) return <p>Cargando jugador...</p>;
-    if (!form) return <p>No se encontró el jugador.</p>;
 
     return (
         <div className='editor-container container display-flex flex-column align-center flex-center'>
@@ -65,7 +67,7 @@ function EditPlayer() {
                     <input className='form-input' name="nationality" placeholder="Nationality" value={form.nationality} onChange={handleChange} />
                     <input className='form-input' name="region" placeholder="Region" value={form.region} onChange={handleChange} />
                     <input className='form-input' name="teams" placeholder="Teams" value={form.teams} onChange={handleChange} />
-                    <input className='form-input' name="worldCup" placeholder="World Cup" value={form.worldCup} onChange={handleChange} />
+                    <input className='form-input' name="world_cup" placeholder="World Cup" value={form.world_cup} onChange={handleChange} />
                     <input className='form-input' name="data" placeholder="Data" value={form.data} onChange={handleChange} />
                     <button className='form-button' type="submit">Actualizar</button>
                 </form>

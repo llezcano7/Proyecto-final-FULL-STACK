@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import tokenAndCookie from '../utils/jwt.js';
-import authenticator from '../utils/authenticator.js';
+import Authenticator from '../utils/authenticator.js';
 import { UserController } from '../controller/user.js';
 
 export const userRouter = Router();
@@ -26,7 +26,7 @@ userRouter.post('/login', async (req, res) => {
     res.status(responseObj.status).json(responseObj);
 });
 
-userRouter.get('/profile', authenticator, async (req, res) => {
+userRouter.get('/profile', Authenticator, async (req, res) => {
   const responseObj = await UserController.findUserById(req.user.id);
   res.status(responseObj.status).json(responseObj);
 });

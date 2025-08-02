@@ -49,7 +49,7 @@ export class UserController {
       return response({
         success: true,
         status: 200,
-        message: "Bienvenido/a",
+        message: "Welcome!",
         data: user
       });
     } catch (error) {

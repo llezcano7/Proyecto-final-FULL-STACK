@@ -48,10 +48,9 @@ function Navbar() {
       </nav>
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="theme-toggle"
-        aria-label="Cambiar tema"
+        className="theme-toggle" aria-label="Cambiar tema"
       >
-        {darkMode ? <BsSunFill size={22} /> : <BsMoonStarsFill size={22} />}
+        {darkMode ? <BsSunFill className='icon' /> : <BsMoonStarsFill className='icon'/>}
       </button>
       {user ? (
         <>

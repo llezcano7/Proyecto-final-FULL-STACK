@@ -4,8 +4,19 @@
         url('/public/home.jpg');
     background-size: cover;
     background-position: center;
-    padding: 15rem;
+    background-attachment: fixed;
+    padding-block: 5rem;
+    padding-inline: 8rem;
 }
+
+.home-text {
+    color: var(--third-color);
+    font-size: var(--size-5);
+    text-align: center;
+    text-shadow: 2px 2px 4px #555555;
+    padding-inline: 5rem;
+}
+
 
 .separator {
     background-color: var(--secondary-color);

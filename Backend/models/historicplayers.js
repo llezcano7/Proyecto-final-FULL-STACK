@@ -49,6 +49,9 @@ export class MongooseConnection {
       position: data.position,
       nationality: data.nationality,
       region: data.region,
+      teams: data.teams,
+      world_cup: data.world_cup,
+      data: data.data
     });
     const newPlayer = await newHistoricPlayer.save();
     return newPlayer;
@@ -57,7 +60,7 @@ export class MongooseConnection {
   //////////////////// PUT ////////////////////
 
   static async replaceHistoricPlayer(id, data) {
-    const replacedHistoricPlayer = await HistoricPlayersModel.findOneAndReplace({ _id: id }, data, { new: true });
+    const replacedHistoricPlayer = await HistoricPlayersModel.findOneAndReplace({ _id: id }, data, { new: true, runValidators: true });;
     return replacedHistoricPlayer;
   }
 
@@ -73,6 +76,13 @@ export class MongooseConnection {
   static async deleteHistoricPlayerById(id) {
     const deletedHistoricPlayerById = await HistoricPlayersModel.findByIdAndDelete(id);
     return deletedHistoricPlayerById;
+  }
+
+   //////////////////// DELETE BY NAME////////////////////
+
+  static async deleteHistoricPlayerByName(name) {
+    const deletedHistoricPlayerByName = await HistoricPlayersModel.findOneAndDelete(name);
+    return deletedHistoricPlayerByName;
   }
 
   /////////////////// FILTER BY REGION ///////////////////

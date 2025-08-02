@@ -35,7 +35,7 @@ export default class UserLog {
     const hashedPassword = await bcrypt.hash(password, 10);
     password = hashedPassword;
 
-    const newUser = new UserModel({ username, email, password: hashedPassword, type: 'user' });
+    const newUser = new UserModel({ username, email, password: hashedPassword, role: 'user' });
 
     const data = await newUser.save();
 
@@ -45,7 +45,7 @@ export default class UserLog {
   /////////////////// LOGIN ///////////////////
 
   static async login(email, password) {
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ email }).select('+password +role');
 
     if (!user) {
       throw new Error("User not found");
@@ -54,6 +54,7 @@ export default class UserLog {
     if (!isMatch) {
       throw new Error("Invalid password");
     }
+    console.log(user)
     return user
   }
 

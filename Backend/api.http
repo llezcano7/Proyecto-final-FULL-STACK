@@ -2,10 +2,13 @@ POST http://localhost:3002/historicplayers
 Content-Type: application/json
 
 {
-  "name": "florencia vicente",
+  "name": "Rodrigo Elias",
   "position": "defender",
   "nationality": "Argentinian",
-  "region": "America"
+  "region": "America",
+  "teams": "River Plate",
+  "world_cup": "",
+  "data": "jugador"
 }
 
 #####

@@ -7,36 +7,32 @@ function PlayersList() {
   const { region } = useParams();
   const [allPlayers, setAllPlayers] = useState([]);
   const [page, setPage] = useState(1);
-  const playersPerPage = 8;
   const [searchTerm, setSearchTerm] = useState("");
+  const playersPerPage = 9;
+
+  useEffect(() => {
+  setPage(1);
+  setSearchTerm("");
+}, [region]);
 
   useEffect(() => {
     setPage(1);
-    if (searchTerm.trim() === "") {
-      fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/region/${region}`)
-        .then(res => res.json())
-        .then(data => {
-          console.log("DATA FETCHED:", data);
-          const players = Array.isArray(data.data) ? data.data : Array.isArray(data) ? data : [];
-          setAllPlayers(players);
-        })
-        .catch(() => setAllPlayers([]));
-    } else {
-      fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/name/${searchTerm}`)
-        .then(res => res.json())
-        .then(data => {
-          const players = Array.isArray(data.data) ? data.data : Array.isArray(data) ? data : [];
-          setAllPlayers(players);
-        })
-        .catch(() => setAllPlayers([]));
-    }
-  }, [region, searchTerm]);
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/region/${region}`)
+      .then(res => res.json())
+      .then(data => {
+        const players = Array.isArray(data.data) ? data.data : [];
+        setAllPlayers(players);
+      })
+      .catch(() => setAllPlayers([]));
+  }, [region]);
 
-  const totalPages = Math.ceil(allPlayers.length / playersPerPage);
+  const filteredPlayers = allPlayers.filter(player =>
+    player.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredPlayers.length / playersPerPage);
   const startIndex = (page - 1) * playersPerPage;
-  const currentPlayers = Array.isArray(allPlayers)
-    ? allPlayers.slice(startIndex, startIndex + playersPerPage)
-    : [];
+  const currentPlayers = filteredPlayers.slice(startIndex, startIndex + playersPerPage);
 
   if (!region) return <p>Región no definida</p>;
 
@@ -51,7 +47,7 @@ function PlayersList() {
       <SearchBar onSearch={term => {
         setSearchTerm(term);
         setPage(1);
-      }} />
+      }}/>
 
       {currentPlayers.length === 0 ? (
         <p>No se encontraron jugadores.</p>

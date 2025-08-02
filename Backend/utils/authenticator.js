@@ -3,7 +3,7 @@ import response from '../utils/response.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-export default function authenticator(req, res, next) {
+export default function Authenticator(req, res, next) {
   const token = req.cookies['user-token'];
 
   if (!token) {

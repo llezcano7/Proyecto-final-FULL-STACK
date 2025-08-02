@@ -8,7 +8,6 @@ function SearchBar({ onSearch }) {
   const handleChange = (e) => {
     const term = e.target.value;
     setSearchTerm(term);
-    onSearch(term);
     if (term.trim().length >= 2) {
       onSearch(term.trim());
     }
