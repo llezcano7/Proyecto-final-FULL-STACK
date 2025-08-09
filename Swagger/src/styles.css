@@ -1,0 +1,99 @@
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #333332;
+}
+
+.list-tabs {
+    background-color: #262624;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    height: 100vh;
+    border-right: 2px solid #262624;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.endpoint {
+    width: 100%;
+    background-color: #262624;
+    color: #fff;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #05b10e;
+    border-radius: 4px;
+}
+
+.chip {
+    background-color: #05b10e;
+    color: #fff;
+    border-radius: 4px;
+    padding: .25rem .4rem;
+}
+
+.endpoint-list {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.endpoint-list h3 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.endpoint-list span {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.endpoint-list p {
+    max-width: 60%;
+}
+
+.btn {
+    background-color: #fff;
+    color: #05b10e;
+    font-size: smaller;
+    text-transform: uppercase;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    width: fit-content;
+    cursor: pointer;
+}
+.btn:hover {
+    padding: none;
+    background-color: #05b10e;
+    color: #fff;
+    border-radius: 1px;
+    outline: 3px solid #fff;
+}
+
+.response {
+    background-color: #262624;
+    color: #fff;
+    white-space: pre-wrap;
+    text-align: justify;
+    padding: 2rem;
+    margin-top: 1rem;
+    border-radius: 4px;
+    border: 1px solid #05b10e;
+    max-width: 40rem;
+    max-height: 25rem;
+    overflow-x:hidden;
+    overflow-y: auto;
+}
+.handle {
+    width: 20px;
+    height: 100vh;
+    color: #05b10e;
+    content: "<-->";
+}

@@ -1,10 +1,13 @@
 .icon {
   fill: var(--primary-color);
   font-size: var(--size-2);
-  background-color: none;
-  border: none;
-
 }
+
+.menu-btn {
+  fill: var(--third-color);
+  font-size: 20px;
+}
+
 .navbar a:hover {
   color: var(--third-color);
   transition: all ease-in 0.2s;

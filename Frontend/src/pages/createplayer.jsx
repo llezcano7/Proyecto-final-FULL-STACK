@@ -43,7 +43,12 @@ function CreatePlayer() {
   };
 
   return (
-    <div className="display-flex flex-between align-center flex-center container width-1">
+    <div className="create-container display-flex flex-between align-center flex-center container width-1">
+       <div>
+        <h3 className="create-text h3 mayus width-2 pd-left-6">
+          Formá parte de la historia grande del fútbol, creando el futbolista que consideres que debe estar en Players API
+        </h3>
+      </div>
       <form className="form width-2 pd-right-4" onSubmit={handleSubmit}>
         <h2 className="form-title">Crear Player</h2>
         <input className="form-input" name="name" placeholder="Name" onChange={handleChange} />
@@ -56,12 +61,6 @@ function CreatePlayer() {
         <button className="form-button" type="submit">Crear</button>
         {error && <p style={{ color: 'red', marginTop: '1rem' }}>{error}</p>}
       </form>
-
-      <div>
-        <h3 className="h3 mayus width-2 pd-left-6">
-          Formá parte de la historia grande del fútbol, creando el futbolista que consideres que debe estar en Players API
-        </h3>
-      </div>
     </div>
   );
 }

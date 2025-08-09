@@ -11,9 +11,9 @@ function PlayersList() {
   const playersPerPage = 9;
 
   useEffect(() => {
-  setPage(1);
-  setSearchTerm("");
-}, [region]);
+    setPage(1);
+    setSearchTerm("");
+  }, [region]);
 
   useEffect(() => {
     setPage(1);
@@ -37,7 +37,7 @@ function PlayersList() {
   if (!region) return <p>Región no definida</p>;
 
   return (
-    <div className="players-section display-flex flex-column gap-2 pd-2 align-center">
+    <div className="players-section display-flex flex-column gap-2 pd-2 align-center width-1">
       <h2 className="region-title">
         {searchTerm.trim() === ""
           ? `Jugadores de ${region.charAt(0).toUpperCase() + region.slice(1)}`
@@ -47,12 +47,12 @@ function PlayersList() {
       <SearchBar onSearch={term => {
         setSearchTerm(term);
         setPage(1);
-      }}/>
+      }} />
 
       {currentPlayers.length === 0 ? (
         <p>No se encontraron jugadores.</p>
       ) : (
-        <div className="players-grid grid grid-cols-3 gap-2 width-1 items-center">
+        <div className="players-grid items-center container grid grid-cols-3 gap-2">
           {currentPlayers.map(player => (
             <PlayerCard key={player._id} player={player} />
           ))}

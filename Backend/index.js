@@ -8,11 +8,23 @@ dotenv.config();
 
 
 const app = express();
+const allowedOrigins = process.env.FRONT.split(',');
+
 
 //// MIDLEWARE ////
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors({ origin: process.env.FRONT, credentials: true}));
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS bloqueado para origen: ${origin}`));
+    }
+  },
+  credentials: true
+}));
 
 
 app.get('/', (req, res) => {

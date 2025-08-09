@@ -28,21 +28,24 @@ function Navbar() {
     }
   }, [darkMode]);
 
+  const logoSrc = darkMode ? '/logoapi-2.png' : '/logoapi-1.png';
+
   return (
     <header className="container bg-1 display-flex flex-between align-center width-1">
       <Link className='logo' to="/">
-        <img src="/logoapi-1.png" alt="Logo principal de Players API" />
+        <img src={logoSrc} alt="Logo principal de Players API" />
       </Link>
-      <button className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menú">
-        <GiHamburgerMenu size={24} />
-      </button>
+      <div>
+        <GiHamburgerMenu className="menu-btn" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menú" />
+      </div>
       <nav className={`navbar ${menuOpen ? 'open' : ''} display-flex flex-between align-center pointer pd-inline-1 gap-2`}>
-        <Link className='mayus' to="/region/america">Players de América</Link>
-        <Link className='mayus' to="/region/europa">Players de Europa</Link>
-        <Link className='mayus' to="/region/rest">Players de Resto del Mundo</Link>
+        <button className="close-btn" onClick={() => setMenuOpen(false)} aria-label="Cerrar menú">✕</button>
+        <Link className='region mayus' to="/region/america" onClick={() => setMenuOpen(false)}>Players de América</Link>
+        <Link className='region mayus' to="/region/europa" onClick={() => setMenuOpen(false)}>Players de Europa</Link>
+        <Link className='region mayus' to="/region/rest" onClick={() => setMenuOpen(false)}>Players de Resto del Mundo</Link>
         {user && (
           <>
-            <Link className="btn" to="/create">Crear Player</Link>
+            <Link className="btn" to="/create" onClick={() => setMenuOpen(false)}>Crear Player</Link>
           </>
         )}
       </nav>
@@ -50,18 +53,17 @@ function Navbar() {
         onClick={() => setDarkMode(!darkMode)}
         className="theme-toggle" aria-label="Cambiar tema"
       >
-        {darkMode ? <BsSunFill className='icon' /> : <BsMoonStarsFill className='icon'/>}
+        {darkMode ? <BsSunFill className='icon' /> : <BsMoonStarsFill className='icon' />}
       </button>
       {user ? (
         <>
-          <span className="mayus">Hola, {user.username}!</span>
           <Link className="btn" onClick={handleLogout}>Cerrar sesión</Link>
         </>
       ) : (
         <>
-          <div className='auth-links display-flex flex-between align-center gap-2'>
-            <Link className='btn' to="/login">Iniciar sesión</Link>
-            <Link className='btn' to="/register">Registrarse</Link>
+          <div className='auth-links display-flex flex-between align-center gap-1'>
+            <Link className='btn' to="/login" onClick={() => setMenuOpen(false)}>Iniciar sesión</Link>
+            <Link className='btn' to="/register" onClick={() => setMenuOpen(false)}>Registrarse</Link>
           </div>
         </>
       )}

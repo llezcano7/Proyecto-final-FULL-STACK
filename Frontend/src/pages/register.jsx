@@ -30,7 +30,7 @@ function Register() {
   };
 
   return (
-    <div className='container display-flex flex-between align-center flex-center gap-3 width-1'>
+    <div className='register-container container display-flex flex-between align-center flex-center gap-3 width-1'>
       <div className='register-text'>
         <h3 className='mayus h3 width-2'>
           Registrate en Players API y creá tu jugador histórico. Recordá que somos una API colaborativa, por lo que te pedimos que tu creación sea responsable y veraz

@@ -54,10 +54,10 @@ function EditPlayer() {
     };
 
     return (
-        <div className='editor-container container display-flex flex-column align-center flex-center'>
+        <div className='container display-flex flex-column'>
 
-            <div className='container width-1 display-flex align-center'>
-                <div className='pd-left-6'>
+            <div className='editor-container container width-1 display-flex align-center flex-center'>
+                <div className='playercard-edit'>
                     <PlayerCard player={form} showActions={false} />
                 </div>
                 <form className='form width-2' onSubmit={handleUpdate}>

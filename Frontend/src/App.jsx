@@ -16,16 +16,17 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/region/:region" element={<PlayersList />} />
-        <Route path="/create" element={<PrivateRoute> <CreatePlayer /> </PrivateRoute>} />
-        <Route path="/edit/:id" element={<PrivateRoute> <EditPlayer /> </PrivateRoute>} />
-      </Routes>
-      <Footer />
+
+        <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/region/:region" element={<PlayersList />} />
+            <Route path="/create" element={<PrivateRoute> <CreatePlayer /> </PrivateRoute>} />
+            <Route path="/edit/:id" element={<PrivateRoute> <EditPlayer /> </PrivateRoute>} />
+          </Routes>
+        <Footer />
     </>
   );
 }

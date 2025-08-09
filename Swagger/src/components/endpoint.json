@@ -1,0 +1,27 @@
+[
+    {
+        "endpoint": "http://localhost:3002/historicplayers",
+        "method": "GET",
+        "title": "Obtener jugadores históricos"
+    },
+    {
+        "endpoint": "http://localhost:3002/historicplayers/name/maradona",
+        "method": "GET",
+        "title": "Obtener jugadores históricos por nombre"
+    },
+    {
+        "endpoint": "http://localhost:3002/historicplayers/region/america",
+        "method": "GET",
+        "title": "Obtener jugadores históricos por región: América"
+    },
+    {
+        "endpoint": "http://localhost:3002/historicplayers/region/europa",
+        "method": "GET",
+        "title": "Obtener jugadores históricos por región: Europa"
+    },
+    {
+        "endpoint": "http://localhost:3002/historicplayers/region/rest",
+        "method": "GET",
+        "title": "Obtener jugadores históricos por región: Resto del mundo"
+    }
+]

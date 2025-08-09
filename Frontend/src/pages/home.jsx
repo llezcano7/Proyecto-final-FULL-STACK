@@ -12,7 +12,6 @@ function Home() {
       setPlayers([]);
       return;
     }
-    console.log("Buscando jugador:", name);
     try {
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/historicplayers/name/${name}`);
       if (!res.ok) throw new Error("Error en la búsqueda");
@@ -37,13 +36,13 @@ function Home() {
 
   return (
     <>
-      <div className='home-bg display-flex flex-column gap-2'>
+      <div className='home-container home-bg display-flex flex-column gap-2 width-1'>
         <div>
-          <h1 className='home-text mayus display-flex flex-center align-center'> Encontrá todos los futbolistas aquí. El que no encuentres ¡registrate y crealo!</h1>
+          <h1 className='home-text mayus display-flex'> Encontrá todos los futbolistas aquí. El que no encuentres ¡registrate y crealo!</h1>
         </div>
         <SearchBar onSearch={searchPlayer} />
         {players.length > 0 && (
-          <div className="display-flex flex-center gap-2 mt-2">
+          <div className="playercard-home display-flex flex-center align-center gap-1">
             {players.slice(0, 3).map(player => (
               <PlayerCard key={player._id || player.name} player={player} />
             ))}
@@ -52,13 +51,13 @@ function Home() {
       </div>
 
       <div className='separator display-flex flex-center align-center pd-block-4 width-1'>
-        <h2 className='mayus'> Porqué <span className='mayus separator-span'>players api</span> </h2>
+        <h2 className='separator-text mayus'> Porqué <span className='mayus separator-span'>players api</span> </h2>
       </div>
 
       <div className='info-bg'>
-        <div className='container width-1 display-flex flex-between align-center gap-5 pd-block-6'>
+        <div className='info-container container width-1 display-flex flex-between align-center gap-5 pd-block-6'>
           <div className='info-text'>
-            <h3 className='mayus'>Estadísticas detalladas de futbolistas que han marcado una época</h3>
+            <h3 className='text-container mayus'>Estadísticas detalladas de futbolistas que han marcado una época</h3>
           </div>
           <ul className='info-list'>
             <li>3.500 millones de fans</li>
