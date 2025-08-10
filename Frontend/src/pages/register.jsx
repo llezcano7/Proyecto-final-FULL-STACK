@@ -25,7 +25,7 @@ function Register() {
       setErrorMessage("");
     } catch (err) {
       setErrorMessage(err.message);
-      setSuccessMessage("Registro inválildo");
+      setSuccessMessage("");
     }
   };
 

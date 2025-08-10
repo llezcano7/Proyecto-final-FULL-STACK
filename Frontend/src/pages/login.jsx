@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/authcontext';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const { login } = useAuth();
+  const { login, user } = useAuth();
+  useEffect(() => {
+    if (user) navigate('/create');
+  }, [user]);
+
   const navigate = useNavigate();
 
   const [form, setForm] = useState({ email: '', password: '' });
@@ -32,7 +36,7 @@ function Login() {
     <div className='login-container container display-flex flex-center align-center flex-row gap-3 pd-3 width-1'>
       <div className='login-text'>
         <h3 className='mayus h3 width-2 '>
-          Bienvenido a Players API, la aplicación que te convertirá en un experto del fútbol. Aquí podrás acceder a datos de 
+          Bienvenido a Players API, la aplicación que te convertirá en un experto del fútbol. Aquí podrás acceder a datos de
           los mejores jugadores de la historia del deporte más popular del mundo.
         </h3>
       </div>
